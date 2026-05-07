@@ -8,11 +8,11 @@ const corsOptions = {
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization']
 }
-app.use(cors(corsOptions));
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+app.use(cors(corsOptions));
 app.engine('ejs', require('ejs').__express);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
